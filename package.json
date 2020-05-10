@@ -1,6 +1,7 @@
 {
   "name": "Angry-Choppaz",
   "version": "0.0.1",
+  "main": "bin/index.js",
   "description": "Multiplayer helicopter simulator",
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -12,5 +13,8 @@
   },
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "bin": {
+   "choppers": "./bin/index.js"
+ }
 }
