@@ -1,5 +1,22 @@
 #!/usr/bin/env node
 
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter port: (3000 is default)", function(port) {
+    if(port=='') {
+        var port = process.env.PORT || 3000;
+    }
+});
+
+rl.on("close", function() {
+    console.log("\nBYE BYE !!!");
+    process.exit(0);
+});
+
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
@@ -7,11 +24,15 @@ var io = require('socket.io')(http, {
   pingInterval: 1000,
   pingTimeout: 3000
 });
-var port = process.env.PORT || 3000;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
+
+console.log("//////////////////////////////////////////////////////////////////////////////////////");
+console.log("Angry Choppers has begun");
+console.log("Starting http server on port "+port);
+console.log("//////////////////////////////////////////////////////////////////////////////////////");
 
 
 app.use(express.static('js'))
