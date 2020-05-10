@@ -28,13 +28,11 @@ rl.on("close", function() {
     });
 
     app.get('/', function(req, res) {
-        res.sendFile(__dirname + '/index.html');
+        res.sendFile("../" + __dirname + '/index.html');
     });
 
-    console.log("///////////////////////////////////////////////////////////////////////\n\n");
-    console.log("Initialising Angry Choppaz");
-    console.log("Starting http server on port " + port + "\n\n");
-    console.log("///////////////////////////////////////////////////////////////////////\n");
+    console.log("\n/// Initialising Angry Choppaz");
+    console.log("\n/// Starting http server on port " + port);
 
 
     app.use(express.static('js'))
