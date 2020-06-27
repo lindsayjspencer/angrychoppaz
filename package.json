@@ -15,6 +15,6 @@
     "start": "node index.js"
   },
   "bin": {
-   "choppers": "./bin/index.js"
- }
+    "choppers": "./bin/index.js"
+  }
 }
